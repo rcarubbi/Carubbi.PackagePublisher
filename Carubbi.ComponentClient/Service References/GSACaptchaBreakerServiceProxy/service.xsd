@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Carubbi.CaptchaBreaker.DTOs" />
+  <xs:element name="Break">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="image" nillable="true" type="xs:base64Binary" />
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Carubbi.CaptchaBreaker.DTOs" minOccurs="0" name="config" nillable="true" type="q1:CaptchaConfig" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BreakResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="BreakResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

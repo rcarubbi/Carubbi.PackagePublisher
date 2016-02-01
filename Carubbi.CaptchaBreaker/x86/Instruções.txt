@@ -1,0 +1,2 @@
+﻿os arquivos desta pasta são necessários para o funcionamento da quebra de captcha no modo Tesseract quando a DLL for compilada para arquitetura x86
+após baixar o pacote renomear a extensão dos arquivos de .dl_ para .dll

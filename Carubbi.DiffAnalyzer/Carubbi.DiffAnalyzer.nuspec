@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>Raphael Carubbi Neto</authors>
+    <owners>Raphael Carubbi Neto</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Analisador de diferenças entre objetos</description>
+    <releaseNotes></releaseNotes>
+    <copyright>Copyright 2015</copyright>
+    <tags>DiffAnalyzer Comparador Diferenças</tags>
+  </metadata>
+</package>

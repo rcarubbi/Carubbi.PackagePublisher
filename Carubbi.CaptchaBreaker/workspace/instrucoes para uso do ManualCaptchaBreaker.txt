@@ -1,0 +1,4 @@
+﻿1. A cada requisição um par de arquivos (imagem e txt) é gerado nesta pasta com o mesmo nome variando apenas a extensão. Ex: abc.jpg, abc.txt;
+2. A thread fica parada aguardando que a solução do captcha seja digitada dentro do arquivo txt;
+3. Preencha manualmente a solução do captcha no arquivo txt e salvo o mesmo;
+4. O componente devolve a solução para o programa chamador

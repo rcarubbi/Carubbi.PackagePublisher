@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B24443C4-5F13-4747-863A-146DC7040561}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Carubbi.Utils</RootNamespace>
+    <AssemblyName>Carubbi.Utils</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>%24/Antlia Library/Main/Antlia.Components/Antlia.Utils</SccProjectName>
+    <SccLocalPath>.</SccLocalPath>
+    <SccAuxPath>http://tfs.antlia.local:8080/tfs/defaultcollection</SccAuxPath>
+    <SccProvider>{4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}</SccProvider>
+    <SignAssembly>false</SignAssembly>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <DocumentationFile>bin\Release\Carubbi.Utils.xml</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Configuration\ConfigurationManager.cs" />
+    <Compile Include="Configuration\TripleDESProtectedConfigurationProvider.cs" />
+    <Compile Include="DataTypes\DateRange.cs" />
+    <Compile Include="Data\CNAEHelper.cs" />
+    <Compile Include="Data\ConversionExtensions.cs" />
+    <Compile Include="Data\EnumerableExtensions.cs" />
+    <Compile Include="Data\EnumerationExtensions.cs" />
+    <Compile Include="Data\CNPJHelper.cs" />
+    <Compile Include="Data\MathHelper.cs" />
+    <Compile Include="Data\ObjectExtensions.cs" />
+    <Compile Include="Data\StringExtensions.cs" />
+    <Compile Include="Image\BitmapExtensions.cs" />
+    <Compile Include="Data\GenericEqualityComparer.cs" />
+    <Compile Include="Data\GenericMultipleComparer.cs" />
+    <Compile Include="Mail\MailMessageFactory.cs" />
+    <Compile Include="NativeWin32\User32Facade.cs" />
+    <Compile Include="Persistence\CampoChaveAttribute.cs" />
+    <Compile Include="Persistence\CampoNaoPersistivelAttribute.cs" />
+    <Compile Include="Resources\RobotsResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RobotsResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Security\CriptografiaSimetrica.cs" />
+    <Compile Include="Security\SymmetricCryptProvider.cs" />
+    <Compile Include="UIControls\AbortableBackgroundWorker.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UIControls\ComboBoxTree.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UIControls\ControlExtensions.cs" />
+    <Compile Include="UIControls\CustomComboBoxRenderer.cs" />
+    <Compile Include="UIControls\ExtendedDateTimePicker.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Validation\ValidationExtension.cs" />
+    <Compile Include="Image\ImageExtensions.cs" />
+    <Compile Include="IoC\ImplementationResolver.cs">
+    </Compile>
+    <Compile Include="Validation\MaskHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Persistence\Serializer.cs" />
+    <Compile Include="Persistence\StreamExtensions.cs" />
+    <Compile Include="UIControls\ToolstripCheckbox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UIControls\ToolstripDefaultTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\RobotsResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>RobotsResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Carubbi.Utils.nuspec" />
+    <None Include="Resources\stop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\config.png" />
+    <Content Include="Resources\excel.png" />
+    <Content Include="Resources\play.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.XML" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

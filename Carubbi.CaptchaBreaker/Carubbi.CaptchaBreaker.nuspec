@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>Raphael Carubbi Neto</authors>
+    <owners>Raphael Carubbi Neto</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Wrapper do Tesseract e do Captcha Breaker para quebra de captchas</description>
+    <releaseNotes></releaseNotes>
+    <copyright>Copyright Carubbi Consultoria e Tecnologia 2015</copyright>
+    <tags>Captcha Decaptcha</tags>
+  </metadata>
+</package>
+ 

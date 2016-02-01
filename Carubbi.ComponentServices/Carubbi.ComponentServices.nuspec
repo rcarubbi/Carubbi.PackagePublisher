@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>Raphael Carubbi Neto</authors>
+    <owners>Raphael Carubbi Neto</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Camada responsável por expor componentes do framework Carubbi.Components como serviço</description>
+    <releaseNotes></releaseNotes>
+    <copyright>Copyright 2015</copyright>
+    <tags>Componentes Carubbi Serviço Serviços</tags>
+  </metadata>
+</package>
