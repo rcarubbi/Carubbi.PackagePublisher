@@ -69,6 +69,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carubbi.DAL.Interfaces", "C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carubbi.AuthenticationManager", "Carubbi.AuthenticationManager\Carubbi.AuthenticationManager.csproj", "{5971FF50-6C4B-4F27-9E09-EFE697FE1821}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carubbi.CurrencyWriter", "Carubbi.CurrencyWriter\Carubbi.CurrencyWriter.csproj", "{EF99A996-AFD7-43DE-AB1E-82B7378BE634}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -187,6 +189,10 @@ Global
 		{5971FF50-6C4B-4F27-9E09-EFE697FE1821}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5971FF50-6C4B-4F27-9E09-EFE697FE1821}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5971FF50-6C4B-4F27-9E09-EFE697FE1821}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF99A996-AFD7-43DE-AB1E-82B7378BE634}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF99A996-AFD7-43DE-AB1E-82B7378BE634}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF99A996-AFD7-43DE-AB1E-82B7378BE634}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF99A996-AFD7-43DE-AB1E-82B7378BE634}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -220,5 +226,6 @@ Global
 		{1514E554-C13A-43CA-AE78-8C9C68AB6174} = {7EDE3B25-BC1E-4FFF-961C-D0B0D16DED26}
 		{D7F53BE8-CB17-4AE8-B60B-363D365D02D1} = {7EDE3B25-BC1E-4FFF-961C-D0B0D16DED26}
 		{5971FF50-6C4B-4F27-9E09-EFE697FE1821} = {DB77E436-C087-4392-BD3E-B49C4AD42A78}
+		{EF99A996-AFD7-43DE-AB1E-82B7378BE634} = {628CFEC1-8E87-4C96-AD89-E690DA723406}
 	EndGlobalSection
 EndGlobal
