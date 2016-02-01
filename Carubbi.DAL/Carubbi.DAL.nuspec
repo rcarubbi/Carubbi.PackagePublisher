@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Carubbi.DAL</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>Raphael Carubbi Neto</authors>
+    <owners>Raphael Carubbi Neto</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Micro ORM Baseado em procedures</description>
+    <releaseNotes></releaseNotes>
+    <copyright>Copyright Carubbi Consultoria e Tecnologia 2015</copyright>
+    <tags>ORM Stored Procedures</tags>
+  </metadata>
+</package>
+
+
+
+
