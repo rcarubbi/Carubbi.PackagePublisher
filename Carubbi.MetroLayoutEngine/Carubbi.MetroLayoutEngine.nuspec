@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Framework de Interface para windows forms estilo windows 8 metro interface</description>
+    <copyright>Copyright Carubbi Consultoria e Tecnologia 2015</copyright>
+    <tags>Metro Interface Layout</tags>
+  </metadata>
+</package>
