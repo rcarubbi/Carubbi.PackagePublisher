@@ -57,6 +57,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carubbi.Mainframe", "Carubb
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carubbi.ObjectXMFDisplay", "Carubbi.ObjectXMFDisplay\Carubbi.ObjectXMFDisplay.csproj", "{2ADBCB9B-4F7F-42A1-B6A9-F6D990BEB051}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carubbi.ProxyAuthentication", "Carubbi.ProxyAuthentication\Carubbi.ProxyAuthentication.csproj", "{7AE4CBA5-5C44-42C2-BE4F-F79F88B31D39}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carubbi.ExtendedWebBrowser", "Carubbi.ExtendedWebBrowser\Carubbi.ExtendedWebBrowser.csproj", "{64C369C1-283C-489C-9724-66140652FAC4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -147,6 +151,14 @@ Global
 		{2ADBCB9B-4F7F-42A1-B6A9-F6D990BEB051}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2ADBCB9B-4F7F-42A1-B6A9-F6D990BEB051}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2ADBCB9B-4F7F-42A1-B6A9-F6D990BEB051}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AE4CBA5-5C44-42C2-BE4F-F79F88B31D39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AE4CBA5-5C44-42C2-BE4F-F79F88B31D39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AE4CBA5-5C44-42C2-BE4F-F79F88B31D39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AE4CBA5-5C44-42C2-BE4F-F79F88B31D39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64C369C1-283C-489C-9724-66140652FAC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64C369C1-283C-489C-9724-66140652FAC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64C369C1-283C-489C-9724-66140652FAC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64C369C1-283C-489C-9724-66140652FAC4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -173,5 +185,7 @@ Global
 		{BEB86DFD-A00C-4F64-A6E0-37558E80F3E3} = {DB77E436-C087-4392-BD3E-B49C4AD42A78}
 		{EFCD1E46-37AB-4B29-B82F-5F09B6EEB450} = {FF05046B-046F-49E9-9948-164AE5F8CEC5}
 		{2ADBCB9B-4F7F-42A1-B6A9-F6D990BEB051} = {FF05046B-046F-49E9-9948-164AE5F8CEC5}
+		{7AE4CBA5-5C44-42C2-BE4F-F79F88B31D39} = {DB77E436-C087-4392-BD3E-B49C4AD42A78}
+		{64C369C1-283C-489C-9724-66140652FAC4} = {DB77E436-C087-4392-BD3E-B49C4AD42A78}
 	EndGlobalSection
 EndGlobal
