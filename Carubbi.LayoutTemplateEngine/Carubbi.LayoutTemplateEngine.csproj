@@ -73,6 +73,10 @@
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
@@ -81,7 +85,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Implementations\RazorEngine.cs" />
-    <Compile Include="Interfaces\ILayoutTemplateEngine.cs" />
     <Compile Include="Implementations\NVelocityEngine.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -103,10 +106,17 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="Carubbi.LayoutTemplateEngine.nuspec" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Carubbi.LayoutTemplateEngine.Interfaces\Carubbi.LayoutTemplateEngine.Interfaces.csproj">
+      <Project>{c6a0d579-5525-4986-a875-eefb1af62e99}</Project>
+      <Name>Carubbi.LayoutTemplateEngine.Interfaces</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
