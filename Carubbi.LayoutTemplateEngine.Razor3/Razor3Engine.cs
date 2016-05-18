@@ -3,6 +3,7 @@ using RazorEngine;
 using RazorEngine.Templating;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,7 +14,8 @@ namespace Carubbi.LayoutTemplateEngine.Razor3
     {
         public string RenderTemplate(string templateName, IDictionary<string, object> data)
         {
-            Engine.Razor.AddTemplate(templateName, templateName);
+            var templateContent = File.ReadAllText(templateName);
+            Engine.Razor.AddTemplate(templateName, templateContent);
             // On startup
             Engine.Razor.Compile(templateName, null);
             // instead of the Razor.Parse call
@@ -23,7 +25,8 @@ namespace Carubbi.LayoutTemplateEngine.Razor3
 
         public string RenderTemplate(string masterPage, string templateName, IDictionary<string, object> data)
         {
-            Engine.Razor.AddTemplate(masterPage, masterPage);
+            var masterContent = File.ReadAllText(masterPage);
+            Engine.Razor.AddTemplate(masterPage, masterContent);
             return RenderTemplate(templateName, data);
         }
     }
