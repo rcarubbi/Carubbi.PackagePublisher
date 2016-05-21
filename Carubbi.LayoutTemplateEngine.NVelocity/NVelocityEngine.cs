@@ -8,7 +8,7 @@ using NVelocity;
 using NVelocity.App;
 using NVelocity.Runtime;
 
-namespace Carubbi.LayoutTemplateEngine.Implementations
+namespace Carubbi.LayoutTemplateEngine.NVelocity
 {
     /// <summary>
     /// Gerenciador de templates baseado na implementação NVelocity

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Carubbi.LayoutTemplateEngine.Interfaces;
 using RazorEngine;
 using RazorEngine.Templating;
@@ -10,6 +11,11 @@ namespace Carubbi.LayoutTemplateEngine.Implementations
     /// </summary>
     public class RazorEngine : ILayoutTemplateEngine
     {
+        public string RenderFromContentTemplate(string content, IDictionary<string, object> data)
+        {
+            throw new NotImplementedException();
+        }
+
         /// <summary>
         /// Renderiza um template a partir do nome, substituindo as variáveis do template pelas variáveis passadas como parâmetro
         /// </summary>

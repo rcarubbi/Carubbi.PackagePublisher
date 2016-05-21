@@ -26,5 +26,8 @@ namespace Carubbi.LayoutTemplateEngine.Interfaces
         /// <param name="data">Dicionário com as váriáveis (Chave/Valor)</param>
         /// <returns>Template com as variávies substituídas</returns>
         string RenderTemplate(string masterPage, string templateName, IDictionary<string, object> data);
+
+
+        string RenderFromContentTemplate(string content, IDictionary<string, object> data);
     }
 }

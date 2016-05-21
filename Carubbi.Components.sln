@@ -77,6 +77,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carubbi.LayoutTemplateEngin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carubbi.LayoutTemplateEngine.Razor3", "Carubbi.LayoutTemplateEngine.Razor3\Carubbi.LayoutTemplateEngine.Razor3.csproj", "{C599F785-705E-41C4-BD5B-7B87D247A251}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carubbi.LayoutTemplateEngine.NVelocity", "Carubbi.LayoutTemplateEngine.NVelocity\Carubbi.LayoutTemplateEngine.NVelocity.csproj", "{2D6AECE4-FAB7-4654-B909-1E7BDC603CEB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -211,6 +213,10 @@ Global
 		{C599F785-705E-41C4-BD5B-7B87D247A251}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C599F785-705E-41C4-BD5B-7B87D247A251}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C599F785-705E-41C4-BD5B-7B87D247A251}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D6AECE4-FAB7-4654-B909-1E7BDC603CEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D6AECE4-FAB7-4654-B909-1E7BDC603CEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D6AECE4-FAB7-4654-B909-1E7BDC603CEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D6AECE4-FAB7-4654-B909-1E7BDC603CEB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -248,5 +254,6 @@ Global
 		{232785DE-BB1D-41B5-8690-E650B4120452} = {7EDE3B25-BC1E-4FFF-961C-D0B0D16DED26}
 		{C6A0D579-5525-4986-A875-EEFB1AF62E99} = {628CFEC1-8E87-4C96-AD89-E690DA723406}
 		{C599F785-705E-41C4-BD5B-7B87D247A251} = {628CFEC1-8E87-4C96-AD89-E690DA723406}
+		{2D6AECE4-FAB7-4654-B909-1E7BDC603CEB} = {628CFEC1-8E87-4C96-AD89-E690DA723406}
 	EndGlobalSection
 EndGlobal
