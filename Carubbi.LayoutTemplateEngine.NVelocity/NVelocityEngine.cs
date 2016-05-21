@@ -6,7 +6,9 @@ using Carubbi.LayoutTemplateEngine.Interfaces;
 using Commons.Collections;
 using NVelocity;
 using NVelocity.App;
+using NVelocity.Context;
 using NVelocity.Runtime;
+using System.Collections;
 
 namespace Carubbi.LayoutTemplateEngine.NVelocity
 {
@@ -17,9 +19,38 @@ namespace Carubbi.LayoutTemplateEngine.NVelocity
     {
         private readonly string _templatesPath;
 
+        public NVelocityEngine()
+        {
+
+        }
+
         public NVelocityEngine(string templatesPath)
         {
             _templatesPath = templatesPath;
+        }
+
+
+        public string RenderFromContentTemplate(string content, IDictionary<string, object> data)
+        {
+            StringWriter writer = new StringWriter();
+
+            VelocityEngine e = new VelocityEngine();
+            e.Init();
+            var context = new VelocityContext();
+            var templateData = data ?? new Dictionary<string, object>();
+
+            foreach (var key in templateData.Keys)
+            {
+                context.Put(key, templateData[key]);
+            }
+            e.Evaluate(context, writer, "template", content);
+            return writer.ToString();
+
+        }
+
+        private IContext CreateContext(IDictionary<string, object> data)
+        {
+            throw new NotImplementedException();
         }
 
         #region ILayoutTemplateEngine Members
