@@ -3,28 +3,28 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Web;
-using ItauNS = Itau.SC.Mar2.Web.Security;
+//using ItauNS = Itau.SC.Mar2.Web.Security;
  
 namespace Carubbi.AuthenticationManager
 {
     public class Mar2AuthenticationModule : IHttpModule
     {
-        protected ItauNS.Mar2AuthenticationModule Module;
+      //  protected ItauNS.Mar2AuthenticationModule Module;
 
         public Mar2AuthenticationModule()
         {
-            this.Module = new ItauNS.Mar2AuthenticationModule();
+         //   this.Module = new ItauNS.Mar2AuthenticationModule();
         }
 
         public void Dispose()
         {
-            this.Module.Dispose();
+         //   this.Module.Dispose();
         }
 
         public void Init(HttpApplication context)
         {
            // context.PreRequestHandlerExecute += new EventHandler(this.RequestHandlerExecute);
-            this.Module.Init(context);
+        //    this.Module.Init(context);
         }
 
         private void RequestHandlerExecute(object sender, EventArgs e)
@@ -36,26 +36,32 @@ namespace Carubbi.AuthenticationManager
                 String path = context.Request.Path.ToLower();
 
                 if (path.Contains("login"))
-                    this.Module.Context_PostReleaseRequestState(sender, e);
+                {
+                    //    this.Module.Context_PostReleaseRequestState(sender, e);
+                }
                 else
                 {
                     Boolean isAuthenticated = false;
                     try
                     {
                         if (context.Session != null && context.Session.Count > 0)
-                            isAuthenticated = ItauNS.Mar2Identity.IsAuthenticated;
+                        {
+                            //        isAuthenticated = ItauNS.Mar2Identity.IsAuthenticated;
+                        }
+
                     }
                     catch { }
 
                     Boolean requireAuth = IsPageOrHandler(path) && !IsNonAuthUrl(path);
                     if (!isAuthenticated && requireAuth && path.EndsWith(".aspx"))
                     {
-                        String redirectUrl = ItauNS.Mar2Config.URL_TelaLoginInicial + "?url=" + HttpUtility.UrlEncode(path + ((context.Request.QueryString.Count > 0) ? "?" + context.Request.QueryString : String.Empty));
+                        //   String redirectUrl = ItauNS.Mar2Config.URL_TelaLoginInicial + "?url=" + HttpUtility.UrlEncode(path + ((context.Request.QueryString.Count > 0) ? "?" + context.Request.QueryString : String.Empty));
+                        String redirectUrl = "";
                         context.Response.Redirect(redirectUrl);
                     }
                     else
                     {
-                        this.Module.Context_PostReleaseRequestState(sender, e);
+                        //     this.Module.Context_PostReleaseRequestState(sender, e);
                     }
                 }
             }

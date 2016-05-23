@@ -4,8 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Web;
 using System.Web.SessionState;
-using Itau.SC.Mar2.Web.Security;
-using ItauNS = Itau.SC.Mar2.Web.Security;
+//using Itau.SC.Mar2.Web.Security;
+//using ItauNS = Itau.SC.Mar2.Web.Security;
 namespace Carubbi.AuthenticationManager
 {
     /// <summary>
@@ -13,22 +13,25 @@ namespace Carubbi.AuthenticationManager
     /// </summary>
     public class Mar2AuthenticationHandler: IHttpHandler, IRequiresSessionState
     {
-        protected ItauNS.Mar2AuthenticationHandler Handle;
+        //protected ItauNS.Mar2AuthenticationHandler Handle;
 
         public Mar2AuthenticationHandler()
         {
-            this.Handle = new ItauNS.Mar2AuthenticationHandler();
+            //this.Handle = new ItauNS.Mar2AuthenticationHandler();
         }
 
         #region IHttpHandler Members
         public bool IsReusable
         {
-            get { return this.Handle.IsReusable; }
+            get {
+                //return this.Handle.IsReusable; 
+                return true;
+            }
         }
 
         public void ProcessRequest(HttpContext context)
         {
-            this.Handle.ProcessRequest(context);
+            //this.Handle.ProcessRequest(context);
         }
         #endregion
     }

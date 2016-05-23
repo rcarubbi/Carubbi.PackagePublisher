@@ -109,15 +109,9 @@
     <Content Include="workspace\instrucoes para uso do ManualCaptchaBreaker.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="x64\Instruções.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="x64\liblept168.dl_">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="x64\libtesseract302.dl_">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <Content Include="x64\Instruções.txt" />
+    <Content Include="x64\liblept168.dl_" />
+    <Content Include="x64\libtesseract302.dl_" />
     <Content Include="x86\Instruções.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

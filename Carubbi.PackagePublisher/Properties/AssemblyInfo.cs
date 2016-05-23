@@ -1,26 +1,26 @@
 ﻿using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using System.Security;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Carubbi.LayoutTemplateEngine.NVelocity")]
+[assembly: AssemblyTitle("Carubbi.PackagePublisher")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Carubbi.LayoutTemplateEngine.NVelocity")]
+[assembly: AssemblyProduct("Carubbi.PackagePublisher")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
-[assembly: AllowPartiallyTrustedCallers()]
+
 // Setting ComVisible to false makes the types in this assembly not visible 
 // to COM components.  If you need to access a type in this assembly from 
 // COM, set the ComVisible attribute to true on that type.
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("2d6aece4-fab7-4654-b909-1e7bdc603ceb")]
+[assembly: Guid("9264b514-b60d-4689-8138-4c566263e61b")]
 
 // Version information for an assembly consists of the following four values:
 //

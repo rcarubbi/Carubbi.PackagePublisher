@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Web;
-using Itau.SC.Mar2.Web.Security;
+//using Itau.SC.Mar2.Web.Security;
 
 namespace Carubbi.AuthenticationManager
 {
@@ -19,7 +19,8 @@ namespace Carubbi.AuthenticationManager
         /// <returns></returns>
         public bool IsAuthenticated(HttpContext context)
         {
-            return Mar2Identity.IsAuthenticated;
+            //return Mar2Identity.IsAuthenticated;
+            return true;
         }
 
         /// <summary>
@@ -29,7 +30,8 @@ namespace Carubbi.AuthenticationManager
         /// <returns>dados customizados do usuário</returns>
         public string GetUserData(HttpContext context)
         {
-            return Mar2Identity.Funcional;
+            //return Mar2Identity.Funcional;
+            return string.Empty;
         }
 
         /// <summary>
@@ -37,9 +39,10 @@ namespace Carubbi.AuthenticationManager
         /// </summary>
         /// <param name="context">contexto HTTP</param>
         /// <returns>Nome do usuário</returns>
-        public String GetUserName(HttpContext context)
+        public string GetUserName(HttpContext context)
         {
-            return Mar2Identity.NomeCompleto;
+            //return Mar2Identity.NomeCompleto;
+            return string.Empty;
         }
 
         /// <summary>
@@ -71,7 +74,7 @@ namespace Carubbi.AuthenticationManager
         /// </summary>
         public void ExibirTelaLogin()
         {
-            Mar2Identity.ShowTelaLogin();
+            //Mar2Identity.ShowTelaLogin();
         }
 
         /// <summary>
@@ -80,7 +83,7 @@ namespace Carubbi.AuthenticationManager
         /// <param name="result"></param>
         public void RedirecionarUrl(AuthenticationResult result)
         {
-            Itau.SC.Mar2.Web.Security.Mar2Pages.RedirectProcessRequest();
+            //Itau.SC.Mar2.Web.Security.Mar2Pages.RedirectProcessRequest();
         }
     }
 }

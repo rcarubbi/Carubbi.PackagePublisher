@@ -13,11 +13,11 @@ namespace Itau.BSITokenDALFactory
     public class DAOFactory : IDAOFactory
     {
 
-        private BSI.Token.GerenciadorToken gerenciador;
+       // private BSI.Token.GerenciadorToken gerenciador;
 
         private DAOFactory()
         {
-            gerenciador = new BSI.Token.GerenciadorToken();
+            // gerenciador = new BSI.Token.GerenciadorToken();
         }
 
         private static volatile DAOFactory _instance;
@@ -39,7 +39,8 @@ namespace Itau.BSITokenDALFactory
         /// <returns></returns>
         public IDbConnection CreateConnection()
         {
-            return gerenciador.ConexaoSQL(ConfigurationManager.AppSettings["NOME_BANCO"]);
+            // return gerenciador.ConexaoSQL(ConfigurationManager.AppSettings["NOME_BANCO"]);
+            return null;
         }
 
         public static IDAOFactory GetInstance()

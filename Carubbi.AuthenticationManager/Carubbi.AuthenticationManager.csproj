@@ -55,6 +55,9 @@
     <Reference Include="Itau.SC.Mar2.Web.Security">
       <HintPath>..\Referencias\Itau.SC.Mar2.Web.Security.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
@@ -79,10 +82,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Fakes Include="Fakes\Itau.SC.Mar2.Web.Security.fakes" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Carubbi.AuthenticationManager.nuspec" />
+    <Fakes Include="Fakes\Itau.SC.Mar2.Web.Security.fakes" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
