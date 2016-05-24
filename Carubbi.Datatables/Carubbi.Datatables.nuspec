@@ -7,9 +7,9 @@
     <authors>Raphael Carubbi Neto</authors>
     <owners>Raphael Carubbi Neto</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Wrapper da layout engine Razor 2</description>
+    <description>HtmlHelpers e Custom attributes facilitadores na construção de grids com suporte a ordenação dinâmica utilizando datatables.js no asp.net mvc5</description>
     <releaseNotes></releaseNotes>
-    <copyright>Copyright 2015</copyright>
-    <tags>Layout Engine Wrapper Razor</tags>
+    <copyright>Copyright Carubbi Consultoria e Tecnologia 2016</copyright>
+    <tags>Datatables grid ordenação asp.net mvc</tags>
   </metadata>
 </package>
