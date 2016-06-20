@@ -1,20 +1,51 @@
-﻿using System.Net.Mail;
-using Carubbi.Mailer.Interfaces;
+﻿using Carubbi.Mailer.Interfaces;
 using Carubbi.Utils.Configuration;
 using Carubbi.Utils.Data;
-using System.Collections.Generic;
-using System;
+using System.Net.Mail;
 namespace Carubbi.Mailer.Implementation
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class SmtpSender : IMailSender
     {
+        /// <summary>
+        /// 
+        /// </summary>
         public string Username { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public string Password { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool UseDefaultCredentials {
+            get
+            {
+                if (!_useDefaultCredentials.HasValue)
+                {
+                    _useDefaultCredentials = config["UseDefaultCredentials"].To<bool>(false);
+                }
+
+                return _useDefaultCredentials.Value;
+            }
+            set
+            {
+                _useDefaultCredentials = value;
+            }
+        }
 
         private bool? _useSSL;
         private string _host;
         private int? _portNumber;
+        private bool? _useDefaultCredentials;
 
+        /// <summary>
+        /// 
+        /// </summary>
         public bool UseSSL
         {
             get
@@ -32,7 +63,9 @@ namespace Carubbi.Mailer.Implementation
             }
         }
 
-
+        /// <summary>
+        /// 
+        /// </summary>
         public string Host
         {
             get
@@ -49,6 +82,9 @@ namespace Carubbi.Mailer.Implementation
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public int PortNumber
         {
             get
@@ -67,6 +103,10 @@ namespace Carubbi.Mailer.Implementation
 
 
         private AppSettings config;
+
+        /// <summary>
+        /// 
+        /// </summary>
         public SmtpSender()
         {
             config = new AppSettings("CarubbiMailer");
@@ -77,18 +117,32 @@ namespace Carubbi.Mailer.Implementation
         private const int DEFAULT_SSL_SMTP_PORT = 465;
         private const int DEFAULT_NON_SSL_SMTP_PORT = 25;
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="message"></param>
         public void Send(System.Net.Mail.MailMessage message)
         {
-
-            SmtpClient smtp = new SmtpClient
+            SmtpClient smtp = null;
+            if (UseDefaultCredentials)
             {
-                Host = this.Host,
-                EnableSsl = this.UseSSL,
-                Port = this.PortNumber,
-                Credentials = new System.Net.NetworkCredential(Username, Password),
-                DeliveryMethod = SmtpDeliveryMethod.Network,
-            };
-
+                smtp = new SmtpClient();
+                smtp.UseDefaultCredentials = true;
+                smtp.Host = Host;
+                smtp.Port = PortNumber;
+                smtp.EnableSsl = UseSSL;
+            }
+            else
+            {
+                smtp = new SmtpClient
+                {
+                    Host = this.Host,
+                    EnableSsl = this.UseSSL,
+                    Port = this.PortNumber,
+                    Credentials = new System.Net.NetworkCredential(Username, Password),
+                    DeliveryMethod = SmtpDeliveryMethod.Network,
+                };
+            }
             smtp.Send(message);
             smtp = null;
 
@@ -97,7 +151,9 @@ namespace Carubbi.Mailer.Implementation
         #endregion
 
 
-
+        /// <summary>
+        /// 
+        /// </summary>
         public void Dispose()
         {
 
