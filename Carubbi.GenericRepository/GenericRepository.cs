@@ -17,6 +17,25 @@ namespace Carubbi.GenericRepository
             _collecton = collection.AsQueryable();
         }
 
+        public GenericRepository(IDbContext db, IEnumerable<T> collection)
+           : this(db)
+        {
+            _collecton = collection.AsQueryable();
+        }
+
+        public GenericRepository(IDbContext db, IQueryable<T> collection)
+          : this(db)
+        {
+            _collecton = collection;
+        }
+
+        public GenericRepository(IDbContext db, IOrderedQueryable<T> collection)
+       : this(db)
+        {
+            _collecton = collection;
+        }
+
+
         public GenericRepository(IDbContext db)
         {
             _db = db;
