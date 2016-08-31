@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace Carubbi.GenericRepository
 {
-    public class GenericRepository<T> where T : class
+    public class GenericRepository<T> : IGenericRepository<T> where T : class
     {
         protected IDbContext _db;
         protected IDbSet<T> _dbSet;

@@ -2,31 +2,26 @@
 
 namespace Carubbi.GenericRepository
 {
-    public class PagedListResult<TEntity> : IPagedListResult<TEntity>
+    public interface IPagedListResult<out TEntity>
     {
-        //-----------------------------------------------------------
-        /// <summary>
-        /// Does the returned result contains more rows to be retrieved?
-        /// </summary>
-        public bool HasNext { get; set; }
+        bool HasNext { get; set; }
 
         //-----------------------------------------------------------
         /// <summary>
         /// Does the returned result contains previous items ?
         /// </summary>
-        public bool HasPrevious { get; set; }
+        bool HasPrevious { get; set; }
 
         //-----------------------------------------------------------
         /// <summary>
         /// Total number of rows that could be possibly be retrieved.
         /// </summary>
-        public int Count { get; set; }
+        int Count { get; set; }
 
         //-----------------------------------------------------------
         /// <summary>
         /// Result of the query.
         /// </summary>
-        public IEnumerable<TEntity> Entities { get; set; }
+        IEnumerable<TEntity> Entities { get; }
     }
-
 }
