@@ -31,6 +31,19 @@ namespace Carubbi.Mailer.Exchange
         public string Username { get; set; }
         public string Password { get; set; }
 
+        public bool UseDefaultCredentials
+        {
+            get
+            {
+                throw new NotSupportedException();
+            }
+
+            set
+            {
+                throw new NotSupportedException();
+            }
+        }
+
         public void Send(MailMessage message)
         {
             ex.EmailMessage exchangeMessage = new ex.EmailMessage(GetExchangeService(Username, Password));

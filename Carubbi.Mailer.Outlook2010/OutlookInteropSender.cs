@@ -155,5 +155,18 @@ namespace Carubbi.Mailer.Outlook2010
                 throw new NotSupportedException();
             }
         }
+
+        public bool UseDefaultCredentials
+        {
+            get
+            {
+                throw new NotSupportedException();
+            }
+
+            set
+            {
+                throw new NotSupportedException();
+            }
+        }
     }
 }

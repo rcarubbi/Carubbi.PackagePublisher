@@ -156,5 +156,18 @@ namespace Carubbi.Mailer.Outlook2007
                 throw new NotSupportedException();
             }
         }
+
+        public bool UseDefaultCredentials
+        {
+            get
+            {
+                throw new NotSupportedException();
+            }
+
+            set
+            {
+                throw new NotSupportedException();
+            }
+        }
     }
 }
