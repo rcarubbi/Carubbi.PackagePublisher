@@ -12,5 +12,7 @@ namespace Carubbi.Mailer.Interfaces
         bool UseSSL { get; set; }
         string Host { get; set; }
         int PortNumber { get; set; }
+
+        bool UseDefaultCredentials { get; set; }
     }
 }
