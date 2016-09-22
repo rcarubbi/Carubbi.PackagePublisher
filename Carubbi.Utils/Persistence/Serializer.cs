@@ -59,7 +59,27 @@ namespace Carubbi.Utils.Persistence
         /// <returns>XML gerado</returns>
         public string XmlSerialize(T instance)
         {
-            XmlSerializer serializer = new XmlSerializer(typeof(T));
+            return XmlSerialize(instance, null);
+        }
+
+        /// <summary>
+        /// Serializa um objeto em XML injetando custom attributes no objeto antes de serializar
+        /// </summary>
+        /// <param name="instance"></param>
+        /// <param name="attributeOverrides"></param>
+        /// <returns></returns>
+        public string XmlSerialize(T instance, XmlAttributeOverrides attributeOverrides)
+        {
+            XmlSerializer serializer = null;
+            if (attributeOverrides != null)
+            {
+                serializer = new XmlSerializer(typeof(T), attributeOverrides);
+            }
+            else
+            {
+                serializer = new XmlSerializer(typeof(T));
+            }
+            
             XmlWriterSettings settings = new XmlWriterSettings();
             settings.Encoding = Encoding.GetEncoding("ISO-8859-1");
             settings.Indent = true;
