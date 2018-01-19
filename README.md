@@ -52,12 +52,55 @@ They are divided in the following areas:
 > Implementation of named pipes stream to abstract the complexity. Allow you to use interprocess communication in a simple way.
 
 #### 1.10 Carubbi.CaptchaBreaker.*
+
+> Abstractions for break simple captchas. It has three approaches: GSA Captcha Breaker via TCP, Tesseract, or Manual (Popping Up a screen asking the code)
+
 #### 1.11 Carubbi.ComponentServices
+
+> It's just to exposes services over http like Carubbi.CaptchaBreaker using GSA Captcha Breaker approach
+
 #### 1.12 Carubbi.ComponentClient
+
+> It's just a user interface to call wcf services for tests purposes (I know a unit test is much better)
+
 #### 1.13 Carubbi.Logger
-#### 1.14 Carubbi.Mailer.*
-#### 1.15 Carubbi.Utils
-#### 1.16 Carubbi.Web.Utils 
+
+> It's a simple logger implementing Chain of Responsability Pattern
+
+#### 1.14 Carubbi.Utils
+
+> It's a cross-cutting layer to handle common c# tasks like:
+* Datatype conversions:
+
+Instead 
+```csharp
+int? intVariable;
+try
+{
+    intVariable = Convert.ToInt32(str);
+}
+catch(Exception ex)
+{
+    intVariable = defaultValue;
+}
+```
+
+or 
+
+```csharp
+  if (!int.TryParse(str, out int intValue))
+  {
+      intValue = defaultValue;
+  }
+```
+
+You just use
+
+```csharp
+int? intVariable = str.To<int>(defaultValue);
+```
+
+#### 1.15 Carubbi.Web.Utils 
 
 ### 2. Mainframe
 
