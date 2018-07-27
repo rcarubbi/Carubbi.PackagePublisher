@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2035
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{628CFEC1-8E87-4C96-AD89-E690DA723406}"
 EndProject
@@ -86,6 +86,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carubbi.Datatables", "Carubbi.Datatables\Carubbi.Datatables.csproj", "{CF390C5B-809E-4577-B08F-185E20653069}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carubbi.Communication", "Carubbi.Communication\Carubbi.Communication.csproj", "{19005BD0-6BBD-479E-AA40-DCB1E60413DF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{70F55E2A-A9A5-452F-B6D8-5AF5C182161E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carubbi.Utils.Test", "Carubbi.Utils.Test\Carubbi.Utils.Test.csproj", "{3637B34B-B7C5-46E9-8C51-B617CCE1D68A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -237,6 +241,10 @@ Global
 		{19005BD0-6BBD-479E-AA40-DCB1E60413DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19005BD0-6BBD-479E-AA40-DCB1E60413DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{19005BD0-6BBD-479E-AA40-DCB1E60413DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3637B34B-B7C5-46E9-8C51-B617CCE1D68A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3637B34B-B7C5-46E9-8C51-B617CCE1D68A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3637B34B-B7C5-46E9-8C51-B617CCE1D68A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3637B34B-B7C5-46E9-8C51-B617CCE1D68A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -278,5 +286,9 @@ Global
 		{9264B514-B60D-4689-8138-4C566263E61B} = {D3A73738-5EFB-42C5-94C0-420C52B49D81}
 		{CF390C5B-809E-4577-B08F-185E20653069} = {DB77E436-C087-4392-BD3E-B49C4AD42A78}
 		{19005BD0-6BBD-479E-AA40-DCB1E60413DF} = {628CFEC1-8E87-4C96-AD89-E690DA723406}
+		{3637B34B-B7C5-46E9-8C51-B617CCE1D68A} = {70F55E2A-A9A5-452F-B6D8-5AF5C182161E}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {47307167-D195-4C24-82F5-E1D3D81DDE35}
 	EndGlobalSection
 EndGlobal

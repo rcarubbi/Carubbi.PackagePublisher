@@ -2,6 +2,7 @@
 using System.Collections.Specialized;
 using System.Configuration;
 using System.IO;
+using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Xml;
@@ -11,33 +12,26 @@ namespace Carubbi.Utils.Configuration
     public class TripleDESProtectedConfigurationProvider : ProtectedConfigurationProvider
     {
 
-        private TripleDESCryptoServiceProvider des =
+        private readonly TripleDESCryptoServiceProvider _des =
             new TripleDESCryptoServiceProvider();
 
-        private string pKeyFilePath;
-        private string pName;
+        private string _pName;
 
         // Gets the path of the file 
         // containing the key used to 
         // encryption or decryption. 
-        public string KeyFilePath
-        {
-            get { return pKeyFilePath; }
-        }
+        public string KeyFilePath { get; private set; }
 
 
         // Gets the provider name. 
-        public override string Name
-        {
-            get { return pName; }
-        }
+        public override string Name => _pName;
 
 
         // Performs provider initialization. 
         public override void Initialize(string name, NameValueCollection config)
         {
-            pName = name;
-            pKeyFilePath = config["keyContainerName"];
+            _pName = name;
+            KeyFilePath = config["keyContainerName"];
             ReadKey(KeyFilePath);
         }
 
@@ -45,44 +39,42 @@ namespace Carubbi.Utils.Configuration
         // Performs encryption. 
         public override XmlNode Encrypt(XmlNode node)
         {
-            string encryptedData = EncryptString(node.OuterXml);
+            var encryptedData = EncryptString(node.OuterXml);
 
-            XmlDocument xmlDoc = new XmlDocument();
-            xmlDoc.PreserveWhitespace = true;
+            var xmlDoc = new XmlDocument {PreserveWhitespace = true};
             xmlDoc.LoadXml("<EncryptedData>" +
                 encryptedData + "</EncryptedData>");
 
-            return xmlDoc.DocumentElement;
+            return xmlDoc.DocumentElement ?? throw new InvalidOperationException();
         }
 
         // Performs decryption. 
         public override XmlNode Decrypt(XmlNode encryptedNode)
         {
-            string decryptedData =
+            var decryptedData =
                 DecryptString(encryptedNode.InnerText);
 
-            XmlDocument xmlDoc = new XmlDocument();
-            xmlDoc.PreserveWhitespace = true;
+            var xmlDoc = new XmlDocument {PreserveWhitespace = true};
             xmlDoc.LoadXml(decryptedData);
 
-            return xmlDoc.DocumentElement;
+            return xmlDoc.DocumentElement ?? throw new InvalidOperationException();
         }
 
         // Encrypts a configuration section and returns  
         // the encrypted XML as a string. 
         private string EncryptString(string encryptValue)
         {
-            byte[] valBytes =
+            var valBytes =
                 Encoding.Unicode.GetBytes(encryptValue);
 
-            ICryptoTransform transform = des.CreateEncryptor();
+            var transform = _des.CreateEncryptor();
 
-            MemoryStream ms = new MemoryStream();
-            CryptoStream cs = new CryptoStream(ms,
+            var ms = new MemoryStream();
+            var cs = new CryptoStream(ms,
                 transform, CryptoStreamMode.Write);
             cs.Write(valBytes, 0, valBytes.Length);
             cs.FlushFinalBlock();
-            byte[] returnBytes = ms.ToArray();
+            var returnBytes = ms.ToArray();
             cs.Close();
 
             return Convert.ToBase64String(returnBytes);
@@ -93,17 +85,19 @@ namespace Carubbi.Utils.Configuration
         // returns the unencrypted XML as a string. 
         private string DecryptString(string encryptedValue)
         {
-            byte[] valBytes =
+            var valBytes =
                 Convert.FromBase64String(encryptedValue);
 
-            ICryptoTransform transform = des.CreateDecryptor();
+            var transform = _des.CreateDecryptor();
 
-            MemoryStream ms = new MemoryStream();
-            CryptoStream cs = new CryptoStream(ms,
+            var ms = new MemoryStream();
+            var cs = new CryptoStream(ms,
                 transform, CryptoStreamMode.Write);
+
             cs.Write(valBytes, 0, valBytes.Length);
             cs.FlushFinalBlock();
-            byte[] returnBytes = ms.ToArray();
+
+            var returnBytes = ms.ToArray();
             cs.Close();
 
             return Encoding.Unicode.GetString(returnBytes);
@@ -113,13 +107,14 @@ namespace Carubbi.Utils.Configuration
         // writes them to the supplied file path. 
         public void CreateKey(string filePath)
         {
-            des.GenerateKey();
-            des.GenerateIV();
+            _des.GenerateKey();
+            _des.GenerateIV();
 
-            StreamWriter sw = new StreamWriter(filePath, false);
-            sw.WriteLine(ByteToHex(des.Key));
-            sw.WriteLine(ByteToHex(des.IV));
-            sw.Close();
+            using (var sw = new StreamWriter(filePath, false))
+            {
+                sw.WriteLine(ByteToHex(_des.Key));
+                sw.WriteLine(ByteToHex(_des.IV));
+            }
         }
 
 
@@ -129,32 +124,32 @@ namespace Carubbi.Utils.Configuration
         // TripleDESCryptoServiceProvider. 
         private void ReadKey(string filePath)
         {
-            StreamReader sr = new StreamReader(filePath);
-            string keyValue = sr.ReadLine();
-            string ivValue = sr.ReadLine();
-            des.Key = HexToByte(keyValue);
-            des.IV = HexToByte(ivValue);
+            using (var sr = new StreamReader(filePath))
+            {
+                var keyValue = sr.ReadLine();
+                var ivValue = sr.ReadLine();
+                _des.Key = HexToByte(keyValue);
+                _des.IV = HexToByte(ivValue);
+            }
         }
 
 
         // Converts a byte array to a hexadecimal string. 
-        private string ByteToHex(byte[] byteArray)
+        private static string ByteToHex(byte[] byteArray)
         {
-            string outString = "";
-
-            foreach (Byte b in byteArray)
-                outString += b.ToString("X2");
-
-            return outString;
+            return byteArray.Aggregate("", (current, b) => current + b.ToString("X2"));
         }
 
         // Converts a hexadecimal string to a byte array. 
-        private byte[] HexToByte(string hexString)
+        private static byte[] HexToByte(string hexString)
         {
-            byte[] returnBytes = new byte[hexString.Length / 2];
-            for (int i = 0; i < returnBytes.Length; i++)
-                returnBytes[i] =
-                    Convert.ToByte(hexString.Substring(i * 2, 2), 16);
+            var returnBytes = new byte[hexString.Length / 2];
+            var i = 0;
+            for (; i < returnBytes.Length; i++)
+            {
+                returnBytes[i] = Convert.ToByte(hexString.Substring(i * 2, 2), 16);
+            }
+
             return returnBytes;
         }
 
