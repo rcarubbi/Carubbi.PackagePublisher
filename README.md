@@ -5,16 +5,6 @@ Carubbi.Components
 
 They are divided in the following areas:
 
-### 1. Infrastructure
-
-#### 1.1 Carubbi.Mailer.* 
-
-> Is an abstraction to different approaches to send and receive emails
-> You can send emails by SMTP, Exchange WebService or Outlook 2007 and 2010 interop
-> You can receive emails by POP3 (OpenPOP), Exchange WebService, or Outlook 2007 and 2010 interop
-> The implementations can be injected one you have a unique interface for sender and receiver. 
-> In Carubbi.Utils you will find a Service Locator Anti-Pattern implementation to simplify this injection. (Is not the best way to do that but works, other better options could be StructureMap, Ninject, or AutoFac)
-
 #### 1.2 Carubbi.LayoutTemplateEngine.*
 
 > Is an abstraction to Layout template engines like Razor or NVelocity, this kind of components is useful to create email templates for example. The implementations can be injected like Carubbi.Mailer as well.
