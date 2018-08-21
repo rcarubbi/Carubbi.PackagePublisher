@@ -1,7 +1,6 @@
 ﻿using System.Data;
 using System.Data.SqlClient;
 using Carubbi.DAL.Interfaces;
-using System.Configuration;
 
 namespace Itau.BSITokenDALFactory
 {

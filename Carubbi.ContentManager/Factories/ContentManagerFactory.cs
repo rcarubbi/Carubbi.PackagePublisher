@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Carubbi.ContentManager.Interfaces;
-using Microsoft.Web.Services3;
+﻿using Carubbi.ContentManager.Interfaces;
+using Carubbi.ServiceLocator;
 
 namespace Carubbi.ContentManager.Factories
 {
@@ -55,7 +51,7 @@ namespace Carubbi.ContentManager.Factories
                                string password,
                                 string serverName)
         {
-            return Utils.IoC.ImplementationResolver.Resolve<IContentManager>(new object [] { url, username, password, serverName});
+            return ImplementationResolver.Resolve<IContentManager>(new object [] { url, username, password, serverName});
         }
 
     }

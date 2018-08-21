@@ -1,5 +1,6 @@
 ﻿using Carubbi.PDF.Interfaces;
-using Carubbi.Utils.IoC;
+using Carubbi.ServiceLocator;
+
 namespace Carubbi.PDF.Factories
 {
     /// <summary>

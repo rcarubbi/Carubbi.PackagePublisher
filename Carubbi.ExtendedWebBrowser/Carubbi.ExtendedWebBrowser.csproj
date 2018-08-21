@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Carubbi.ExtendedWebBrowser</RootNamespace>
     <AssemblyName>Carubbi.ExtendedWebBrowser</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>%24/Antlia Library/Main/Antlia.Components/Antlia.ExtendedWebBrowser</SccProjectName>
     <SccLocalPath>.</SccLocalPath>
@@ -61,6 +61,18 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Carubbi.JavascriptWatcher, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Carubbi.JavascriptWatcher.1.0.0.0\lib\net45\Carubbi.JavascriptWatcher.dll</HintPath>
+    </Reference>
+    <Reference Include="Carubbi.Web.Utils, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Carubbi.Web.Utils.1.0.1.0\lib\net472\Carubbi.Web.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="Carubbi.WindowsAppHelper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Carubbi.WindowsAppHelper.1.0.0.0\lib\net472\Carubbi.WindowsAppHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.4.9.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.4.9\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -118,17 +130,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Carubbi.ExtendedWebBrowser.nuspec" />
+    <None Include="packages.config" />
     <None Include="Resources\goButton.Image.bmp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Carubbi.Utils\Carubbi.Utils.csproj">
-      <Project>{b24443c4-5f13-4747-863a-146dc7040561}</Project>
-      <Name>Carubbi.Utils</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Carubbi.Web.Utils\Carubbi.Web.Utils.csproj">
-      <Project>{6bb9e251-8968-4472-b0f6-7c50c15e5c0d}</Project>
-      <Name>Carubbi.Web.Utils</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
@@ -146,6 +149,12 @@
       <ProductName>Windows Installer 3.1</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\config.png" />
+    <Content Include="Resources\excel.png" />
+    <Content Include="Resources\play.png" />
+    <Content Include="Resources\stop.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

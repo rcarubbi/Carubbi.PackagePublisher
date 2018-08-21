@@ -71,7 +71,7 @@ namespace Carubbi.PackagePublisher
             if (errorsLines.Count == 0)
             {
                 var pacote = Directory.GetFiles(Application.StartupPath, "*.nupkg")[0];
-                var destino = Path.Combine(@"\\it_server\SERVIDOR_DATA\Componentes", Path.GetFileName(pacote));
+                var destino = Path.Combine(@"C:\Users\RaphaelCarubbi\Documents\Components", Path.GetFileName(pacote));
                 if (File.Exists(destino))
                     File.Delete(destino);
 

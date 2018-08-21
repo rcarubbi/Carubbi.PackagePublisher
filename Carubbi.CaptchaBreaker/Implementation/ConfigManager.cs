@@ -1,4 +1,4 @@
-﻿using Carubbi.Utils.Configuration;
+﻿using Carubbi.ServiceLocator;
 
 namespace Carubbi.CaptchaBreaker.Implementation
 {

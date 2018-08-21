@@ -1,11 +1,10 @@
-﻿using System;
+﻿using Carubbi.ContentManager.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Web;
-using Carubbi.ContentManager.Interfaces;
-using Carubbi.Utils.Persistence;
-using System.Reflection;
+using Carubbi.Extensions;
+
 namespace Carubbi.ContentManager.Implementations
 {
     public class ContentManagerStub : IContentManager

@@ -1,9 +1,9 @@
-﻿using System.Drawing.Imaging;
+﻿using Carubbi.CaptchaBreaker.DTOs;
+using Carubbi.CaptchaBreaker.Interfaces;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Threading;
-using Carubbi.CaptchaBreaker.DTOs;
-using Carubbi.CaptchaBreaker.Interfaces;
-using Carubbi.Utils.Image;
+using Carubbi.Extensions;
 
 namespace Carubbi.CaptchaBreaker.Implementation
 {

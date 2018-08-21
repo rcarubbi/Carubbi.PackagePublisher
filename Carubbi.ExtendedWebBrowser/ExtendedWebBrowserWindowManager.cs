@@ -1,10 +1,10 @@
 ﻿
 using System;
-using System.Windows.Forms;
 using System.Diagnostics.CodeAnalysis;
-using Carubbi.Utils.UIControls;
+using System.Windows.Forms;
 using Carubbi.Web.Utils;
-using System.Collections.Generic;
+using Carubbi.WindowsAppHelper;
+
 namespace Carubbi.ExtendedWebBrowser
 {
     /// <summary>

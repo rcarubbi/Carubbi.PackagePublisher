@@ -76,12 +76,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Carubbi.Utils\Carubbi.Utils.csproj">
-      <Project>{B24443C4-5F13-4747-863A-146DC7040561}</Project>
-      <Name>Carubbi.Utils</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Carubbi.AuthenticationManager.nuspec" />
     <Fakes Include="Fakes\Itau.SC.Mar2.Web.Security.fakes" />
   </ItemGroup>

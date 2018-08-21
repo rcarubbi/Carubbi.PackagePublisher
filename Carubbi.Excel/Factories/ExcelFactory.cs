@@ -1,4 +1,5 @@
-﻿using Carubbi.Utils.IoC;
+﻿using Carubbi.ServiceLocator;
+
 namespace Carubbi.Excel.Factories
 {
     /// <summary>

@@ -1,4 +1,5 @@
 ﻿using Carubbi.CaptchaBreaker.Interfaces;
+using Carubbi.ServiceLocator;
 
 namespace Carubbi.CaptchaBreaker.Factories
 {
@@ -40,7 +41,7 @@ namespace Carubbi.CaptchaBreaker.Factories
         /// <returns></returns>
         public ICaptchaBreaker CreateCaptchaBreaker()
         {
-            return Utils.IoC.ImplementationResolver.Resolve<ICaptchaBreaker>();
+            return ImplementationResolver.Resolve<ICaptchaBreaker>();
         }
 
         /// <summary>
@@ -50,7 +51,7 @@ namespace Carubbi.CaptchaBreaker.Factories
         /// <returns></returns>
         public ICaptchaBreaker CreateCaptchaBreaker(string chave)
         {
-            return (ICaptchaBreaker)Utils.IoC.ImplementationResolver.Resolve(chave);
+            return (ICaptchaBreaker)ImplementationResolver.Resolve(chave);
         }
     }
 }
