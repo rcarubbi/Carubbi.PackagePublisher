@@ -56,13 +56,8 @@ namespace Carubbi.PackagePublisher
             p.WaitForExit();
 
             if (errorsLines.Count != 0) return;
-            var pacote = Directory.GetFiles(Application.StartupPath, "*.nupkg")[0];
-            var destino = Path.Combine(Application.StartupPath, Path.GetFileName(pacote));
-            if (File.Exists(destino))
-                File.Delete(destino);
-
-            File.Copy(pacote, destino);
-            File.Delete(pacote);
+ 
+          
         }
 
         private void frmPrincipal_Load(object sender, EventArgs e)
