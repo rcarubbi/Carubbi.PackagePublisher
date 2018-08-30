@@ -55,22 +55,21 @@ namespace Carubbi.PackagePublisher
 
             p.WaitForExit();
 
-            if (errorsLines.Count != 0) return;
- 
-          
+            if (errorsLines.Count != 0)
+                MessageBox.Show(string.Join(Environment.NewLine, errorsLines), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
             txtCaminhoPacotes.Text = Settings.Default["UltimaPastaUtilizada"].ToString();
-            if (!string.IsNullOrWhiteSpace(txtCaminhoPacotes.Text))
+            if (!string.IsNullOrWhiteSpace(txtCaminhoPacotes.Text) && new DirectoryInfo(txtCaminhoPacotes.Text).Exists)
                 ListarPacotes();
         }
 
         private void ListarPacotes()
         {
             var projects = Directory.GetFiles(txtCaminhoPacotes.Text, "*.nuspec", SearchOption.AllDirectories);
-
+            clbPacotes.Items.Clear();
             foreach (var project in projects) clbPacotes.Items.Add(Path.GetFileNameWithoutExtension(project));
         }
 
