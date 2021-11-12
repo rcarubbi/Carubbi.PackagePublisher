@@ -7,28 +7,30 @@ using Carubbi.PackagePublisher.Properties;
 
 namespace Carubbi.PackagePublisher
 {
-    public partial class frmPrincipal : Form
+    public partial class MainForm : Form
     {
-        public frmPrincipal()
+        private const string LAST_USED_FOLDER_KEY = "LastUsedFolder";
+
+        public MainForm()
         {
             InitializeComponent();
         }
 
-        private void btnPublicar_Click(object sender, EventArgs e)
+        private void btnPublish_Click(object sender, EventArgs e)
         {
-            for (var i = 0; i < clbPacotes.Items.Count; i++)
+            for (var i = 0; i < clbPackages.Items.Count; i++)
             {
-                if (!clbPacotes.GetItemChecked(i)) continue;
-                var projectName = clbPacotes.Items[i].ToString();
-                var entries = Directory.GetFiles(txtCaminhoPacotes.Text, $"{projectName}.csproj",
+                if (!clbPackages.GetItemChecked(i)) continue;
+                var projectName = clbPackages.Items[i].ToString();
+                var entries = Directory.GetFiles(txtPackagesPath.Text, $"{projectName}.csproj",
                     SearchOption.AllDirectories);
-                if (entries.Length > 0) Publicar(entries[0]);
+                if (entries.Length > 0) Publish(entries[0]);
             }
 
-            MessageBox.Show($@"Publicação concluída!");
+            MessageBox.Show($@"Publish finished!");
         }
 
-        private void Publicar(string projeto)
+        private void Publish(string projeto)
         {
             var fi = new FileInfo(projeto);
             var p = new Process
@@ -59,34 +61,34 @@ namespace Carubbi.PackagePublisher
                 MessageBox.Show(string.Join(Environment.NewLine, errorsLines), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-        private void frmPrincipal_Load(object sender, EventArgs e)
+        private void MainForm_Load(object sender, EventArgs e)
         {
-            txtCaminhoPacotes.Text = Settings.Default["UltimaPastaUtilizada"].ToString();
-            if (!string.IsNullOrWhiteSpace(txtCaminhoPacotes.Text) && new DirectoryInfo(txtCaminhoPacotes.Text).Exists)
-                ListarPacotes();
+            txtPackagesPath.Text = Settings.Default[LAST_USED_FOLDER_KEY].ToString();
+            if (!string.IsNullOrWhiteSpace(txtPackagesPath.Text) && new DirectoryInfo(txtPackagesPath.Text).Exists)
+                ListPackages();
         }
 
-        private void ListarPacotes()
+        private void ListPackages()
         {
-            var projects = Directory.GetFiles(txtCaminhoPacotes.Text, "*.nuspec", SearchOption.AllDirectories);
-            clbPacotes.Items.Clear();
-            foreach (var project in projects) clbPacotes.Items.Add(Path.GetFileNameWithoutExtension(project));
+            var projects = Directory.GetFiles(txtPackagesPath.Text, "*.nuspec", SearchOption.AllDirectories);
+            clbPackages.Items.Clear();
+            foreach (var project in projects) clbPackages.Items.Add(Path.GetFileNameWithoutExtension(project));
         }
 
-        private void btnAtualizar_Click(object sender, EventArgs e)
+        private void btnSelectPath_Click(object sender, EventArgs e)
         {
             var result = fdCaminhoBase.ShowDialog();
             if (result != DialogResult.OK) return;
-            txtCaminhoPacotes.Text = fdCaminhoBase.SelectedPath;
-            Settings.Default["UltimaPastaUtilizada"] = txtCaminhoPacotes.Text;
+            txtPackagesPath.Text = fdCaminhoBase.SelectedPath;
+            Settings.Default[LAST_USED_FOLDER_KEY] = txtPackagesPath.Text;
             Settings.Default.Save();
-            ListarPacotes();
+            ListPackages();
         }
 
-        private void chkTodos_CheckedChanged(object sender, EventArgs e)
+        private void chkAll_CheckedChanged(object sender, EventArgs e)
         {
-            for (var i = 0; i < clbPacotes.Items.Count; i++)
-                clbPacotes.SetItemCheckState(i, chkTodos.Checked ? CheckState.Checked : CheckState.Unchecked);
+            for (var i = 0; i < clbPackages.Items.Count; i++)
+                clbPackages.SetItemCheckState(i, chkAll.Checked ? CheckState.Checked : CheckState.Unchecked);
         }
     }
 }

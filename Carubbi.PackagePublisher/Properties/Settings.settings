@@ -1,10 +1,8 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)"
-              GeneratedClassNamespace="Carubbi.PackagePublisher.Properties" GeneratedClassName="Settings">
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Carubbi.PackagePublisher.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="UltimaPastaUtilizada" Type="System.String" Scope="User">
+    <Setting Name="LastUsedFolder" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
   </Settings>
